@@ -1,0 +1,61 @@
+#CATEGORY "12" // System Control
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#print_to_trace
+#symbol_name "SQL Server Connector"
+
+#user_simplsharp_library "SQL_Query"
+                                      
+digital_input StartSearch, ConfirmUser;
+string_input NameToQuery[30], checkName[50], checkPass[50];
+
+digital_output UserIsConfirmed;
+string_output PhoneNumber;
+                            
+string_parameter _skip_, _skip_, _skip_, _skip_, _skip_, _skip_, ServerLocation[20], ServerPort[6], SQL_Database_Name[30], SQL_Name_Column[30], SQL_User_Name[80], SQL_User_Password[40];
+
+
+SQLConnectionClass mySQLConn;
+
+push StartSearch
+{
+	string serverIP[20], portNum[6], dbName[30], nameColumn[30], userName[80], userPass[40], nameToFind[100], gotBack[1000];
+	
+	nameToFind = NameToQuery;
+	serverIP = ServerLocation;
+	portNum = ServerPort;
+	dbName = SQL_Database_Name;
+	nameColumn = SQL_Name_Column;
+	userName = SQL_User_Name;
+	userPass = SQL_User_Password;
+
+   	try
+	{
+		gotback = mySQLConn.GetData(serverIP, portNum, dbName, nameColumn, userName, userPass, nameToFind);
+		print("Returned Data = %s", gotback);		
+	}
+	catch
+	{
+		print("something broke");
+	}
+}
+
+push ConfirmUser // user input must have "forest\\username" format
+{
+	integer result;
+	string uname[50], pword[50];
+	
+	uname = checkName;
+	pword = checkPass;
+
+	result = mySQLConn.UserInfo(uname, pword);
+	print("Result is %d", result);
+
+	if (result = 1)
+		pulse (500, UserIsConfirmed);
+
+}
+
+
+

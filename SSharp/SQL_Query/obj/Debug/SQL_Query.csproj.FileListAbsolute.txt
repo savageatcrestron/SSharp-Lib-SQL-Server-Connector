@@ -1,0 +1,9 @@
+C:\Users\dsavage\Documents\Visual Studio 2008\Projects\SQL_Query\SQL_Query\bin\Debug\SQL_Query.dll
+C:\Users\dsavage\Documents\Visual Studio 2008\Projects\SQL_Query\SQL_Query\bin\Debug\SQL_Query.pdb
+C:\Users\dsavage\Documents\Visual Studio 2008\Projects\SQL_Query\SQL_Query\bin\Debug\SimplSharpCustomAttributesInterface.dll
+C:\Users\dsavage\Documents\Visual Studio 2008\Projects\SQL_Query\SQL_Query\bin\Debug\SimplSharpHelperInterface.dll
+C:\Users\dsavage\Documents\Visual Studio 2008\Projects\SQL_Query\SQL_Query\bin\Debug\SimplSharpSQLHelperInterface.dll
+C:\Users\dsavage\Documents\Visual Studio 2008\Projects\SQL_Query\SQL_Query\bin\Debug\system.data.sqlclient.dll
+C:\Users\dsavage\Documents\Visual Studio 2008\Projects\SQL_Query\SQL_Query\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dsavage\Documents\Visual Studio 2008\Projects\SQL_Query\SQL_Query\obj\Debug\SQL_Query.dll
+C:\Users\dsavage\Documents\Visual Studio 2008\Projects\SQL_Query\SQL_Query\obj\Debug\SQL_Query.pdb
